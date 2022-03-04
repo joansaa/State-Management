@@ -11,88 +11,37 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Pages'),
+      title: 'Contacts',
+      theme: ThemeData(),
+      home: const DetailScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  String _text = "Prima : ";
-  int x = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-      _text = "Prima : ";
-
-      for (int i=0; i<=_counter; i++){
-        for (int j=1; j<=i; j++){
-          if (i%j==0){
-            x++;
-          }
-        }
-        if (x==2){
-          _text += '${i}, ';
-        }
-        x=0;
-      }
-
-      //if(_counter%2==0 && _counter%3==0){
-        //_text += "${_counter}, ";
-      //}
-
-      //_text = "Ganjil : ";
-      //for(int i=0; i<=_counter; i++){
-        //if(i%2 != 0){
-          //_text += '${i}, ';
-        //}
-      //}
-    });
-  }
+class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              _text,
-              style: Theme.of(context).textTheme.headline4,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget> [
+            Container(
+              margin: const EdgeInsets.only(top: 16.0),
+              child : const Text(
+                "Surabaya Submarine Monument",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
