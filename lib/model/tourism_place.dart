@@ -40,4 +40,22 @@ var tourismPlaceList = [
     location: 'Wonokromo',
     imageAsset: 'assets/images/monkasel2.jpg',
   ),
+
+  TourismPlace(
+    name: 'Kebun Binatang Surabaya',
+    location: 'Wonokromo',
+    imageAsset: 'assets/images/kbs.jpg',
+  ),
+
+  TourismPlace(
+    name: 'Surabaya North Quay',
+    location: 'Perak Utara',
+    imageAsset: 'assets/images/snq.jpg',
+  ),
+
+  TourismPlace(
+    name: 'Hutan Bambu',
+    location: 'Sukolilo',
+    imageAsset: 'assets/images/hutanbambu.jpg',
+  ),
 ];
