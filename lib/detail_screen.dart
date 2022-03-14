@@ -1,7 +1,9 @@
+import 'package:coba/model/tourism_place.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({Key? key, required this.place}) : super(key: key);
+  final TourismPlace place;
 
   @override
   Widget build(BuildContext context) {
@@ -10,15 +12,15 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget> [
-            Image.asset('assets/images/monkasel.jpg'),
+            Image.asset(place.imageAsset),
             Container(
               margin: const EdgeInsets.only(top: 16.0),
-              child : const Text(
-                "Surabaya Submarine Monument",
+              child : Text(
+                place.name,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Lobster',
                 ),
               ),
             ),
